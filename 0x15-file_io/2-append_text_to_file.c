@@ -22,7 +22,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content)
-
+	{
 		for (n_ls = 0; text_content[n_ls]; n_ls++)
 			;
 
@@ -30,7 +30,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (rdwt == -1)
 		return (-1);
-
+	}
 	close(hj);
 
 	return (1);
