@@ -32,7 +32,6 @@ int main(int argc, char **argv)
 
 	if (t == -1)
 		dprintf(STDERR_FILENO, WRITE_ERROR, argv[2]), exit(99);
-
 	f = open(argv[1], O_RDONLY);
 
 	if (f == -1)
@@ -41,29 +40,21 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		rd = read(f, buffer, 1024);
-
 		if (rd == -1)
 			dprintf(STDERR_FILENO, READ_ERROR, argv[1]), exit(98);
-
 		if (rd > 0)
 		{
 			wt = write(t, buffer, rd);
-
 			if (wt == -1)
 				dprintf(STDERR_FILENO, WRITE_ERROR, argv[2]), exit(99);
-		}
-		else
-			break;
+		} else
+				break;
 	}
 	mena = close(f);
-
 	if (mena == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f), exit(100);
-
 	mena = close(t);
-
 	if (mena == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", t), exit(100);
-
 	return (0);
 }
