@@ -1,6 +1,6 @@
 #ifndef Main_h
 #define Main_h
-
+#define READ_BUF_SIZE 1024
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
