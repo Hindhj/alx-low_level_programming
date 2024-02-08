@@ -5,7 +5,7 @@
  * @n: number
  * @m: other number
  *
- * Return : number of bites
+ * Return: number of bites
  *
  */
 
